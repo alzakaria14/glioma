@@ -85,6 +85,9 @@ Parameter utama berada di bagian konfigurasi notebook segmentasi:
 - `SKULL_STRIP_EROSION_RATIO`: besar erosi head mask untuk menghilangkan tengkorak.
 - `MAX_TUMOR_COMPONENTS`: jumlah connected component tumor yang dipertahankan.
 - `MIN_COMPONENT_SOLIDITY` dan `MIN_COMPONENT_EXTENT`: filter bentuk agar struktur bercabang/jaringan sehat tidak ikut masuk.
+- `ENABLE_GLOBAL_REFINEMENT`: mengaktifkan refinement global setelah post-processing standar.
+- `GLOBAL_REFINEMENT_DILATION_RADIUS`: radius ROI lokal dari hull mask awal untuk mencari bagian tumor terang yang masih terpotong.
+- `GLOBAL_REFINEMENT_THRESHOLD`: metode threshold lokal di ROI refinement. Default `otsu`.
 
 Jika lesi pada citra tampak lebih gelap daripada jaringan sekitarnya, ubah `CLUSTER_SELECTION` dari `tumor_like` menjadi `darkest`, tetapi gunakan ini hanya sebagai pembanding karena mode `darkest` tidak memakai scoring komponen tumor.
 
